@@ -9,13 +9,14 @@
 For this homework, we'll use the 2026 Car Fuel Efficiency dataset. Download it from <a href='https://raw.githubusercontent.com/DataTalksClub/machine-learning-zoomcamp/main/cohorts/2026/data/car_fuel_efficiency_2026.csv'>here</a>.
 
 You can do it with wget:
+
 ```bash
 wget https://raw.githubusercontent.com/DataTalksClub/machine-learning-zoomcamp/main/cohorts/2026/data/car_fuel_efficiency_2026.csv
 ```
 
 The goal of this homework is to create a regression model for predicting the car fuel efficiency (column `'fuel_efficiency_mpg'`).
 
-### Preparing the dataset 
+### Preparing the dataset
 
 Use only the following columns:
 
@@ -27,7 +28,7 @@ Use only the following columns:
 
 ### EDA
 
-* Look at the `fuel_efficiency_mpg` variable. Does it have a long tail? 
+* Look at the `fuel_efficiency_mpg` variable. Does it have a long tail?
 
 ### Question 1
 
@@ -37,7 +38,6 @@ There's one column with missing values. What is it?
 * `'horsepower'`
 * `'vehicle_weight'`
 * `'model_year'`
-
 
 ### Question 2
 
@@ -69,7 +69,6 @@ df_test = df.iloc[idx[n_train + n_val:]]
 
 For Q5, repeat the same block with each listed seed. For Q6, use seed `9`.
 
-
 ### Question 3
 
 * We need to deal with missing values for the column from Q1.
@@ -87,11 +86,10 @@ Options:
 - With mean
 - Both are equally good
 
-
 ### Question 4
 
 * Now let's train a regularized linear regression.
-* For this question, fill the NAs with 0. 
+* For this question, fill the NAs with 0.
 * Try different values of `r` from this list: `[0, 0.01, 0.1, 1, 5, 10, 100]`.
 * Use RMSE to evaluate the model on the validation dataset.
 * Round the RMSE scores to 4 decimal digits. This keeps the small but real
@@ -110,14 +108,13 @@ Options:
 - 10
 - 100
 
-
-### Question 5 
+### Question 5
 
 * We used seed 42 for splitting the data. Let's find out how selecting the seed influences our score.
 * Try different seed values: `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`.
 * For each seed, do the train/validation/test split with 60%/20%/20% distribution.
 * Fill the missing values with 0 and train a model without regularization.
-* For each seed, evaluate the model on the validation dataset and collect the RMSE scores. 
+* For each seed, evaluate the model on the validation dataset and collect the RMSE scores.
 * What's the standard deviation of all the scores? To compute the standard deviation, use `np.std`.
 * Round the result to 3 decimal digits (`round(std, 3)`)
 
@@ -130,15 +127,14 @@ What's the value of std?
 
 > Note: Standard deviation shows how different the values are.
 > If it's low, then all values are approximately the same.
-> If it's high, the values are different. 
+> If it's high, the values are different.
 > If standard deviation of scores is low, then our model is *stable*.
-
 
 ### Question 6
 
 * Split the dataset like previously, use seed 9.
 * Combine train and validation datasets.
-* Fill the missing values with 0 and train a model with `r=0.001`. 
+* Fill the missing values with 0 and train a model with `r=0.001`.
 * What's the RMSE on the test dataset?
 
 Options:
